@@ -1,0 +1,19 @@
+# Python bytecode cache
+__pycache__/
+
+# Local environment variables & secrets
+.env
+.env.example
+
+# Local SQLite database
+agent_network.db
+
+# Pytest cache
+.pytest_cache/
+
+# Local agents folder
+.agents/
+
+# Specifications
+spec.md
+2spec.md

@@ -1,0 +1,170 @@
+/* AgentNet — Modern Enterprise UI/UX Stylesheet */
+
+:root {
+  --swiggy-color: #ea580c;
+  --phonepe-color: #7c3aed;
+  --hdfc-color: #1d4ed8;
+  --flipkart-color: #2563eb;
+  --bajaj-color: #0d9488;
+}
+
+/* Base Typography */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Brand Avatar Styles (Vector Icon Backgrounds) */
+.brand-bg-swiggy {
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  color: #ffffff;
+}
+
+.brand-bg-phonepe {
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+  color: #ffffff;
+}
+
+.brand-bg-hdfc {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #ffffff;
+}
+
+.brand-bg-flipkart {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: #ffffff;
+}
+
+.brand-bg-bajaj {
+  background: linear-gradient(135deg, #14b8a6, #0f766e);
+  color: #ffffff;
+}
+
+/* Scenario Action Cards */
+.scenario-card {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.scenario-card:hover {
+  transform: translateY(-2px);
+}
+
+.scenario-card:active {
+  transform: scale(0.98);
+}
+
+/* Scenario card active/loading state */
+.scenario-card.is-loading {
+  opacity: 0.8;
+  pointer-events: none;
+  border-color: #6366f1 !important;
+}
+
+/* Active Agent Selector Pills */
+.agent-pill {
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+}
+
+.agent-pill.active {
+  box-shadow: 0 0 0 2px #4f46e5;
+}
+
+/* Thread Connector Line */
+.thread-connector-line {
+  position: absolute;
+  top: 40px;
+  bottom: 10px;
+  left: 20px;
+  width: 2px;
+}
+
+/* Subtle Card Glow */
+.card-hover-effect {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hover-effect:hover {
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+}
+
+.dark .card-hover-effect:hover {
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+}
+
+/* Post Highlight Animation on New Creation */
+@keyframes postPulseHighlight {
+  0% {
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.6);
+    border-color: #6366f1;
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(99, 102, 241, 0);
+    border-color: #6366f1;
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
+  }
+}
+
+.new-post-highlight {
+  animation: postPulseHighlight 2.5s ease-out;
+}
+
+/* Toast Notifications */
+#toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.toast-message {
+  pointer-events: auto;
+  animation: toastSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.25s ease;
+}
+
+@keyframes toastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.toast-exit {
+  opacity: 0;
+  transform: translateY(-20px);
+}
